@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Seats</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="split-bg">
+  <header class="page-header">
+    <a class="back-link" href="index.html">← Back</a>
+    <h1 class="page-title">Select Seats</h1>
+    <p class="page-subtitle">Choose team side, then pick seats</p>
+  </header>
+
+  <main class="booking-layout">
+    <!-- LEFT: Lakers -->
+    <section class="team-panel team-panel--lakers" aria-label="Lakers booking panel">
+      <div class="panel-head">
+        <h2 class="team-name">LAKERS</h2>
+        <p class="team-hint">Left side seats</p>
+      </div>
+
+      <div class="seat-map" aria-label="Lakers seat map">
+        <div class="seat-grid" id="lakersGrid">
+          <!-- 20 seats -->
+          <button class="seat" data-team="lakers" data-seat="L1" data-status="available" aria-label="Lakers seat L1, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L2" data-status="booked" aria-label="Lakers seat L2, booked" disabled></button>
+          <button class="seat" data-team="lakers" data-seat="L3" data-status="available" aria-label="Lakers seat L3, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L4" data-status="available" aria-label="Lakers seat L4, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L5" data-status="available" aria-label="Lakers seat L5, available"></button>
+
+          <button class="seat" data-team="lakers" data-seat="L6" data-status="available" aria-label="Lakers seat L6, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L7" data-status="available" aria-label="Lakers seat L7, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L8" data-status="booked" aria-label="Lakers seat L8, booked" disabled></button>
+          <button class="seat" data-team="lakers" data-seat="L9" data-status="available" aria-label="Lakers seat L9, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L10" data-status="available" aria-label="Lakers seat L10, available"></button>
+
+          <button class="seat" data-team="lakers" data-seat="L11" data-status="available" aria-label="Lakers seat L11, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L12" data-status="available" aria-label="Lakers seat L12, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L13" data-status="available" aria-label="Lakers seat L13, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L14" data-status="booked" aria-label="Lakers seat L14, booked" disabled></button>
+          <button class="seat" data-team="lakers" data-seat="L15" data-status="available" aria-label="Lakers seat L15, available"></button>
+
+          <button class="seat" data-team="lakers" data-seat="L16" data-status="available" aria-label="Lakers seat L16, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L17" data-status="available" aria-label="Lakers seat L17, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L18" data-status="available" aria-label="Lakers seat L18, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L19" data-status="available" aria-label="Lakers seat L19, available"></button>
+          <button class="seat" data-team="lakers" data-seat="L20" data-status="available" aria-label="Lakers seat L20, available"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CENTER: Court + summary -->
+    <section class="center-panel" aria-label="Court and booking summary">
+      <div class="court">
+        <div class="court-inner">
+          <div class="court-line"></div>
+          <div class="court-circle"></div>
+        </div>
+        <p class="court-label">COURT</p>
+      </div>
+
+      <div class="summary card-mini">
+        <h3>Booking Summary</h3>
+        <p id="summaryText">Selected: 0</p>
+        <p id="summarySeats" class="muted">Seats: none</p>
+        <button id="confirmBtn" class="btn" disabled>Confirm Booking</button>
+        <p id="message" class="muted">Pick seats from either side.</p>
+      </div>
+    </section>
+
+    <!-- RIGHT: Chicago -->
+    <section class="team-panel team-panel--chicago" aria-label="Chicago booking panel">
+      <div class="panel-head">
+        <h2 class="team-name">CHICAGO</h2>
+        <p class="team-hint">Right side seats</p>
+      </div>
+
+      <div class="seat-map" aria-label="Chicago seat map">
+        <div class="seat-grid" id="chicagoGrid">
+          <!-- 20 seats -->
+          <button class="seat" data-team="chicago" data-seat="C1" data-status="available" aria-label="Chicago seat C1, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C2" data-status="available" aria-label="Chicago seat C2, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C3" data-status="booked" aria-label="Chicago seat C3, booked" disabled></button>
+          <button class="seat" data-team="chicago" data-seat="C4" data-status="available" aria-label="Chicago seat C4, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C5" data-status="available" aria-label="Chicago seat C5, available"></button>
+
+          <button class="seat" data-team="chicago" data-seat="C6" data-status="available" aria-label="Chicago seat C6, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C7" data-status="available" aria-label="Chicago seat C7, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C8" data-status="available" aria-label="Chicago seat C8, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C9" data-status="booked" aria-label="Chicago seat C9, booked" disabled></button>
+          <button class="seat" data-team="chicago" data-seat="C10" data-status="available" aria-label="Chicago seat C10, available"></button>
+
+          <button class="seat" data-team="chicago" data-seat="C11" data-status="available" aria-label="Chicago seat C11, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C12" data-status="available" aria-label="Chicago seat C12, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C13" data-status="available" aria-label="Chicago seat C13, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C14" data-status="available" aria-label="Chicago seat C14, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C15" data-status="booked" aria-label="Chicago seat C15, booked" disabled></button>
+
+          <button class="seat" data-team="chicago" data-seat="C16" data-status="available" aria-label="Chicago seat C16, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C17" data-status="available" aria-label="Chicago seat C17, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C18" data-status="available" aria-label="Chicago seat C18, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C19" data-status="available" aria-label="Chicago seat C19, available"></button>
+          <button class="seat" data-team="chicago" data-seat="C20" data-status="available" aria-label="Chicago seat C20, available"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

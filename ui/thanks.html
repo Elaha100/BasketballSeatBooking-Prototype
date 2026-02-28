@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="split-bg">
+  <main class="confirm-layout">
+    <section class="card-mini confirm-card">
+      <h1 class="page-title">Thank you! 🎉</h1>
+      <p class="muted">Your booking is completed (prototype).</p>
+
+      <hr class="divider" />
+
+      <p id="teamLine"><strong>Team:</strong> -</p>
+      <p id="seatsLine"><strong>Seats:</strong> -</p>
+
+      <a class="btn" href="index.html">Back to Home</a>
+    </section>
+  </main>
+
+  <script>
+    const lastRaw = localStorage.getItem("lastBooking");
+
+    const teamLine = document.getElementById("teamLine");
+    const seatsLine = document.getElementById("seatsLine");
+
+    if (!lastRaw) {
+      teamLine.innerHTML = "<strong>Team:</strong> (no data)";
+      seatsLine.innerHTML = "<strong>Seats:</strong> (no data)";
+    } else {
+      const last = JSON.parse(lastRaw);
+      teamLine.innerHTML = `<strong>Team:</strong> ${last.team}`;
+      seatsLine.innerHTML = `<strong>Seats:</strong> ${last.seats.join(", ")}`;
+    }
+  </script>
+</body>
+</html>
